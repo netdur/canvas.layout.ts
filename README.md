@@ -1,8 +1,8 @@
 ## Canvas Layout — Typescript Layout Algorithms
 
-The Canvas Layout Typescript library provides layout algorithms for laying out components. A component is an abstraction; it can be implemented in many ways, for example as items in a HTML5 Canvas drawing or as HTML elements. The jLayout library allows you to focus on drawing the individual components instead of on how to arrange them on your screen.
+The Canvas Layout Typescript library provides layout algorithms for laying out components. A component is an abstraction; it can be implemented in many ways, for example as items in a HTML5 Canvas drawing or as HTML elements. The library allows you to focus on drawing the individual components instead of on how to arrange them on your screen.
 
-The library currently provides four layout algorithms: `border`, which lays out components in five different regions; `grid`, which lays out components in a user defined grid, `flex-grid` which offers a grid with flexible column and row sizes, and `flow` which flows components in a user defined direction. Using the `grid` and `flex-grid` algorithms you can also create horizontal and vertical layouts.
+The library currently provides four (at time) layout algorithms: `Border`, which lays out components in five different regions; `grid`, which lays out components in a user defined grid, `FlexGrid` which offers a grid with flexible column and row sizes, and `Flow` which flows components in a user defined direction. Using the `Grid` and `FlexGrid` algorithms you can also create horizontal and vertical layouts.
 
 ## Usage
 
@@ -66,7 +66,7 @@ The layout method will not resize the container to accommodate its children's pr
     container.bounds(layout.preferred());
     layout.layout(container);
 
-A layout algorithm can be created by calling either the `grid` or `border` constructor in the `Layout` namespace. Both constructors take an option object containing layout specific properties. Both layouts have the following properties in common:
+A layout algorithm can be created by calling either the `Grid` or `Border` constructor in the `Layout` namespace. Both constructors take an option object containing layout specific properties. Both layouts have the following properties in common:
 
 <dl>
     <dt>hgap</dt>
