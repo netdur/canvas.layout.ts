@@ -157,10 +157,10 @@ System.register("core/Log", ["core/Canvas"], function (exports_5, context_5) {
         }
     };
 });
-System.register("components/Rect", ["components/AbstractContainer", "layout/Size", "layout/Insets", "core/Canvas"], function (exports_6, context_6) {
+System.register("components/Rect", ["components/AbstractContainer", "layout/Size", "layout/Insets", "core/Canvas", "core/Log"], function (exports_6, context_6) {
     "use strict";
     var __moduleName = context_6 && context_6.id;
-    var AbstractContainer_1, Size_1, Insets_1, Canvas_2, Rect;
+    var AbstractContainer_1, Size_1, Insets_1, Canvas_2, Log_1, Rect;
     return {
         setters: [
             function (AbstractContainer_1_1) {
@@ -174,6 +174,9 @@ System.register("components/Rect", ["components/AbstractContainer", "layout/Size
             },
             function (Canvas_2_1) {
                 Canvas_2 = Canvas_2_1;
+            },
+            function (Log_1_1) {
+                Log_1 = Log_1_1;
             }
         ],
         execute: function () {
@@ -221,6 +224,42 @@ System.register("components/Rect", ["components/AbstractContainer", "layout/Size
                 Rect.prototype.adoptedCallback = function (oldCanvas, newCanvas) { };
                 return Rect;
             }(AbstractContainer_1.AbstractContainer));
+            __decorate([
+                Log_1.Log(),
+                __metadata("design:type", Function),
+                __metadata("design:paramtypes", []),
+                __metadata("design:returntype", Size_1.Size)
+            ], Rect.prototype, "preferredSize", null);
+            __decorate([
+                Log_1.Log(),
+                __metadata("design:type", Function),
+                __metadata("design:paramtypes", []),
+                __metadata("design:returntype", Size_1.Size)
+            ], Rect.prototype, "minimumSize", null);
+            __decorate([
+                Log_1.Log(),
+                __metadata("design:type", Function),
+                __metadata("design:paramtypes", []),
+                __metadata("design:returntype", Size_1.Size)
+            ], Rect.prototype, "maximumSize", null);
+            __decorate([
+                Log_1.Log(),
+                __metadata("design:type", Function),
+                __metadata("design:paramtypes", []),
+                __metadata("design:returntype", Boolean)
+            ], Rect.prototype, "isVisible", null);
+            __decorate([
+                Log_1.Log(),
+                __metadata("design:type", Function),
+                __metadata("design:paramtypes", []),
+                __metadata("design:returntype", Insets_1.Insets)
+            ], Rect.prototype, "insets", null);
+            __decorate([
+                Log_1.Log(),
+                __metadata("design:type", Function),
+                __metadata("design:paramtypes", []),
+                __metadata("design:returntype", void 0)
+            ], Rect.prototype, "doLayout", null);
             exports_6("Rect", Rect);
         }
     };
@@ -628,7 +667,7 @@ System.register("layout/Flow", ["layout/Bounds", "layout/Size", "layout/Point"],
 System.register("layout/Grid", ["components/AbstractContainer", "layout/Bounds", "layout/Size", "core/Log"], function (exports_13, context_13) {
     "use strict";
     var __moduleName = context_13 && context_13.id;
-    var AbstractContainer_2, Bounds_4, Size_4, Log_1, Fill, GridOptions, Grid;
+    var AbstractContainer_2, Bounds_4, Size_4, Log_2, Fill, GridOptions, Grid;
     return {
         setters: [
             function (AbstractContainer_2_1) {
@@ -640,8 +679,8 @@ System.register("layout/Grid", ["components/AbstractContainer", "layout/Bounds",
             function (Size_4_1) {
                 Size_4 = Size_4_1;
             },
-            function (Log_1_1) {
-                Log_1 = Log_1_1;
+            function (Log_2_1) {
+                Log_2 = Log_2_1;
             }
         ],
         execute: function () {
@@ -740,37 +779,37 @@ System.register("layout/Grid", ["components/AbstractContainer", "layout/Bounds",
                 return Grid;
             }());
             __decorate([
-                Log_1.Log(),
+                Log_2.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", [AbstractContainer_2.AbstractContainer]),
                 __metadata("design:returntype", void 0)
             ], Grid.prototype, "layout", null);
             __decorate([
-                Log_1.Log(),
+                Log_2.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", []),
                 __metadata("design:returntype", Array)
             ], Grid.prototype, "items", null);
             __decorate([
-                Log_1.Log(),
+                Log_2.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", [AbstractContainer_2.AbstractContainer]),
                 __metadata("design:returntype", Size_4.Size)
             ], Grid.prototype, "preferred", null);
             __decorate([
-                Log_1.Log(),
+                Log_2.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", [AbstractContainer_2.AbstractContainer]),
                 __metadata("design:returntype", Size_4.Size)
             ], Grid.prototype, "minimum", null);
             __decorate([
-                Log_1.Log(),
+                Log_2.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", [AbstractContainer_2.AbstractContainer]),
                 __metadata("design:returntype", Size_4.Size)
             ], Grid.prototype, "maximum", null);
             __decorate([
-                Log_1.Log(),
+                Log_2.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", [String, AbstractContainer_2.AbstractContainer]),
                 __metadata("design:returntype", Size_4.Size)
@@ -782,7 +821,7 @@ System.register("layout/Grid", ["components/AbstractContainer", "layout/Bounds",
 System.register("layout/FlexGrid", ["layout/Grid", "components/AbstractContainer", "layout/Size", "core/Log"], function (exports_14, context_14) {
     "use strict";
     var __moduleName = context_14 && context_14.id;
-    var Grid_1, AbstractContainer_3, Size_5, Log_2, FlexGrid;
+    var Grid_1, AbstractContainer_3, Size_5, Log_3, FlexGrid;
     return {
         setters: [
             function (Grid_1_1) {
@@ -794,8 +833,8 @@ System.register("layout/FlexGrid", ["layout/Grid", "components/AbstractContainer
             function (Size_5_1) {
                 Size_5 = Size_5_1;
             },
-            function (Log_2_1) {
-                Log_2 = Log_2_1;
+            function (Log_3_1) {
+                Log_3 = Log_3_1;
             }
         ],
         execute: function () {
@@ -885,13 +924,13 @@ System.register("layout/FlexGrid", ["layout/Grid", "components/AbstractContainer
                 return FlexGrid;
             }(Grid_1.Grid));
             __decorate([
-                Log_2.Log(),
+                Log_3.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", [AbstractContainer_3.AbstractContainer]),
                 __metadata("design:returntype", void 0)
             ], FlexGrid.prototype, "layout", null);
             __decorate([
-                Log_2.Log(),
+                Log_3.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", [String, AbstractContainer_3.AbstractContainer]),
                 __metadata("design:returntype", Size_5.Size)
@@ -937,17 +976,14 @@ System.register("layout/Layout", ["layout/Border", "layout/Flow", "layout/Grid",
         }
     };
 });
-System.register("components/Checkbox", ["components/AbstractContainer", "components/AbstractComponent", "layout/Size", "layout/Insets", "core/Canvas", "core/Log"], function (exports_16, context_16) {
+System.register("components/Checkbox", ["components/AbstractContainer", "layout/Size", "layout/Insets", "core/Canvas", "core/Log"], function (exports_16, context_16) {
     "use strict";
     var __moduleName = context_16 && context_16.id;
-    var AbstractContainer_4, AbstractComponent_2, Size_6, Insets_2, Canvas_3, Log_3, Checkbox;
+    var AbstractContainer_4, Size_6, Insets_2, Canvas_3, Log_4, Checkbox;
     return {
         setters: [
             function (AbstractContainer_4_1) {
                 AbstractContainer_4 = AbstractContainer_4_1;
-            },
-            function (AbstractComponent_2_1) {
-                AbstractComponent_2 = AbstractComponent_2_1;
             },
             function (Size_6_1) {
                 Size_6 = Size_6_1;
@@ -958,8 +994,8 @@ System.register("components/Checkbox", ["components/AbstractContainer", "compone
             function (Canvas_3_1) {
                 Canvas_3 = Canvas_3_1;
             },
-            function (Log_3_1) {
-                Log_3 = Log_3_1;
+            function (Log_4_1) {
+                Log_4 = Log_4_1;
             }
         ],
         execute: function () {
@@ -1012,50 +1048,41 @@ System.register("components/Checkbox", ["components/AbstractContainer", "compone
                 return Checkbox;
             }(AbstractContainer_4.AbstractContainer));
             __decorate([
-                Log_3.Log(),
+                Log_4.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", []),
                 __metadata("design:returntype", Size_6.Size)
             ], Checkbox.prototype, "preferredSize", null);
             __decorate([
-                Log_3.Log(),
+                Log_4.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", []),
                 __metadata("design:returntype", Size_6.Size)
             ], Checkbox.prototype, "minimumSize", null);
             __decorate([
-                Log_3.Log(),
+                Log_4.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", []),
                 __metadata("design:returntype", Size_6.Size)
             ], Checkbox.prototype, "maximumSize", null);
             __decorate([
-                Log_3.Log(),
+                Log_4.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", []),
                 __metadata("design:returntype", Boolean)
             ], Checkbox.prototype, "isVisible", null);
             __decorate([
-                Log_3.Log(),
+                Log_4.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", []),
                 __metadata("design:returntype", Insets_2.Insets)
             ], Checkbox.prototype, "insets", null);
             __decorate([
-                Log_3.Log(),
+                Log_4.Log(),
                 __metadata("design:type", Function),
                 __metadata("design:paramtypes", []),
                 __metadata("design:returntype", void 0)
             ], Checkbox.prototype, "doLayout", null);
-            Checkbox = __decorate([
-                Log_3.AttachLogger(),
-                AbstractComponent_2.RegisterElement({
-                    selector: 'Checkbox',
-                    style: "\n\t\tCheckbox {\n\n\t\t}\n\t",
-                    template: "\n\t\t<Flow oriental=\"horizontal\" class=\"CheckboxContainer\">\n\t\t\t<Rect class=\"CheckboxRect\" /><Label class=\"CheckboxLabel\" text=\"check me up\">\n\t\t</Flow>\n\t"
-                }),
-                __metadata("design:paramtypes", [])
-            ], Checkbox);
             exports_16("Checkbox", Checkbox);
         }
     };

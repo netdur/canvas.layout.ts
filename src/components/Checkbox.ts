@@ -5,7 +5,8 @@ import { Insets } from "../layout/Insets";
 import { Canvas } from "../core/Canvas";
 import { AttachLogger, Log } from "../core/Log";
 
-@AttachLogger()
+// @AttachLogger()
+/*
 @RegisterElement({
 	selector: 'Checkbox',
 	style: `
@@ -19,6 +20,7 @@ import { AttachLogger, Log } from "../core/Log";
 		</Flow>
 	`
 })
+*/
 export class Checkbox extends AbstractContainer {
 
 	@Log()

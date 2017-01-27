@@ -5,11 +5,6 @@ import { Insets } from "../layout/Insets";
 import { Canvas } from "../core/Canvas";
 import { AttachLogger, Log } from "../core/Log";
 
-/*
-@RegisterElement({
-	type: "Rect"
-})
-*/
 // @AttachLogger()
 export class Rect extends AbstractContainer {
 
@@ -24,7 +19,7 @@ export class Rect extends AbstractContainer {
 		this.backgroundColor = backgroundColor;
 	}
 
-	// @Log()
+	@Log()
 	preferredSize(): Size {
 		 return new Size({
 			width: 132,
@@ -32,7 +27,7 @@ export class Rect extends AbstractContainer {
 		});
 	}
 
-	// @Log()
+	@Log()
 	minimumSize(): Size {
 		return new Size({
 			width: 116,
@@ -40,7 +35,7 @@ export class Rect extends AbstractContainer {
 		});
 	}
 
-	// @Log()
+	@Log()
 	maximumSize(): Size {
 		return new Size({
 			width: 148,
@@ -48,17 +43,17 @@ export class Rect extends AbstractContainer {
 		});
 	}
 
-	// @Log()
+	@Log()
 	isVisible(): boolean {
 		return true;
 	}
 
-	// @Log()
+	@Log()
 	insets(): Insets {
 		return new Insets();
 	}
 
-	// @Log()
+	@Log()
 	doLayout(): void {
 		let bounds = this.bounds();
 		let ctx = Canvas._ctx;

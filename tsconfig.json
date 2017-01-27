@@ -15,7 +15,7 @@
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
 		"outDir": "./dist/"//,
-        // "outFile": "./dist/bundle.js"
+        //"outFile": "./dist/bundle.js"
     },
 	"include": [
 		"./src/**/*"
