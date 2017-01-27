@@ -55,6 +55,9 @@ export class Canvas {
 			width: width,
 			height: height
 		}));
+		this.render();
+	}
+	render() {
 		this.root.doLayout();
 	}
 }

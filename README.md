@@ -8,7 +8,7 @@ The library currently provides four (at time) layout algorithms: `Border`, which
 
 ## Usage
 
-We start with the definition of a component; a component is something that has a minimum size, a preferred size, and a maximum size. It also has a method to set its size and position. A container is a component that contains other components and lays them out according to a layout algorithm (which are provided in the jLayout library.) Components need to satisfy the following interface requirements in order to be used with the layout algorithms.
+We start with the definition of a component; a component is something that has a minimum size, a preferred size, and a maximum size. It also has a method to set its size and position. A container is a component that contains other components and lays them out according to a layout algorithm, Components need to satisfy the following interface requirements in order to be used with the layout algorithms.
 
 <dl>
     <dt>bounds()</dt>
