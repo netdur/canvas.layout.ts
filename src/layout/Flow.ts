@@ -137,7 +137,7 @@ export class Flow implements AbstractLayout {
 
 		for (; i < this.options.items.length; i += 1) {
 			if (this.options.items[i].isVisible()) {
-				typeSize = this.options.items[i]["${type}Size"]();
+				typeSize = this.options.items[i][`${type}Size`]();
 				height = Math.max(height, typeSize.height);
 				width += typeSize.width;
 			}

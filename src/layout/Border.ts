@@ -130,31 +130,31 @@ export class Border implements AbstractLayout {
 		let type_size: Size;
 
 		if (this.options.east && this.options.east.isVisible()) {
-			type_size = this.options.east["${type}Size"]();
+			type_size = this.options.east[`${type}Size`]();
 			width += type_size.width +this.options.hgap;
 			height = type_size.height;
 		}
 				
 		if (this.options.west && this.options.west.isVisible()) {
-			type_size = this.options.west["${type}Size"]();
+			type_size = this.options.west[`${type}Size`]();
 			width += type_size.width + this.options.hgap;
 			height = Math.max(type_size.height, height);
 		}
 
 		if (this.options.center && this.options.center.isVisible()) {
-			type_size = this.options.center["${type}Size"]();
+			type_size = this.options.center[`${type}Size`]();
 			width += type_size.width;
 			height = Math.max(type_size.height, height);
 		}
 			
 		if (this.options.north && this.options.north.isVisible()) {
-			type_size = this.options.north["${type}Size"]();
+			type_size = this.options.north[`${type}Size`]();
 			width = Math.max(type_size.width, width);
 			height += type_size.height + this.options.vgap;
 		}
 			
 		if (this.options.south && this.options.south.isVisible()) {
-			type_size = this.options.south["${type}Size"]();
+			type_size = this.options.south[`${type}Size`]();
 			width = Math.max(type_size.width, width);
 			height += type_size.height + this.options.vgap;
 		}

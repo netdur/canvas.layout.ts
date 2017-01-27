@@ -122,7 +122,7 @@ export class Grid implements AbstractLayout {
 		let i: number = 0;
 
 		for (; i < this.options.items.length; i += 1) {
-			type_size = this.options.items[i]["${type}Size"]();
+			type_size = this.options.items[i][`${type}Size`]();
 			width = Math.max(width, type_size.width);
 			height = Math.max(height, type_size.height);
 		}
