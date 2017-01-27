@@ -12,9 +12,10 @@ System.register([], function (exports_1, context_1) {
             }());
             exports_1("PointOptions", PointOptions);
             Point = (function () {
-                function Point(options) {
-                    this.x = options.x;
-                    this.y = options.y;
+                function Point(_a) {
+                    var _b = _a.y, y = _b === void 0 ? 0 : _b, _c = _a.x, x = _c === void 0 ? 0 : _c;
+                    this.x = x;
+                    this.y = y;
                 }
                 return Point;
             }());

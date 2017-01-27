@@ -96,7 +96,7 @@ System.register(["./Grid", "../components/AbstractContainer", "./Size", "../core
                     for (i = 0; i < this.options.items.length; i += 1) {
                         r = Math.floor(i / this.options.columns);
                         c = i % this.options.columns;
-                        type_size = this.options.items[i][type + 'Size']();
+                        type_size = this.options.items[i]["${type}Size"]();
                         if (w[c] < type_size.width) {
                             w[c] = type_size.width;
                         }

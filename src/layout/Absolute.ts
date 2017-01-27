@@ -2,6 +2,9 @@ import { AbstractLayout } from "./AbstractLayout";
 import { AbstractContainer } from "../components/AbstractContainer";
 import { Size } from "./Size";
 
+/*
+ * @TODO TBD
+ */
 export class Absolute extends AbstractLayout {
 	preferred(container: AbstractContainer): Size {
 		return new Size({

@@ -15,10 +15,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 System.register("layout/Size", [], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var Size;
+    var SizeOptions, Size;
     return {
         setters: [],
         execute: function () {
+            SizeOptions = (function () {
+                function SizeOptions() {
+                }
+                return SizeOptions;
+            }());
+            exports_1("SizeOptions", SizeOptions);
             Size = (function () {
                 function Size(_a) {
                     var _b = _a.width, width = _b === void 0 ? 0 : _b, _c = _a.height, height = _c === void 0 ? 0 : _c;
@@ -45,9 +51,10 @@ System.register("layout/Point", [], function (exports_2, context_2) {
             }());
             exports_2("PointOptions", PointOptions);
             Point = (function () {
-                function Point(options) {
-                    this.x = options.x;
-                    this.y = options.y;
+                function Point(_a) {
+                    var _b = _a.y, y = _b === void 0 ? 0 : _b, _c = _a.x, x = _c === void 0 ? 0 : _c;
+                    this.x = x;
+                    this.y = y;
                 }
                 return Point;
             }());
@@ -271,6 +278,12 @@ System.register("core/Canvas", ["components/Rect", "layout/Bounds"], function (e
 System.register("components/AbstractComponent", [], function (exports_8, context_8) {
     "use strict";
     var __moduleName = context_8 && context_8.id;
+    function RegisterElement(_a) {
+        var _b = _a.selector, selector = _b === void 0 ? "AbstractComponent" : _b, _c = _a.style, style = _c === void 0 ? "" : _c, _d = _a.template, template = _d === void 0 ? "" : _d;
+        return function (target) {
+        };
+    }
+    exports_8("RegisterElement", RegisterElement);
     var AbstractComponent;
     return {
         setters: [],
@@ -437,27 +450,27 @@ System.register("layout/Border", ["layout/Bounds", "layout/Size"], function (exp
                     var height = 0;
                     var type_size;
                     if (this.options.east && this.options.east.isVisible()) {
-                        type_size = this.options.east[type + 'Size']();
+                        type_size = this.options.east["${type}Size"]();
                         width += type_size.width + this.options.hgap;
                         height = type_size.height;
                     }
                     if (this.options.west && this.options.west.isVisible()) {
-                        type_size = this.options.west[type + 'Size']();
+                        type_size = this.options.west["${type}Size"]();
                         width += type_size.width + this.options.hgap;
                         height = Math.max(type_size.height, height);
                     }
                     if (this.options.center && this.options.center.isVisible()) {
-                        type_size = this.options.center[type + 'Size']();
+                        type_size = this.options.center["${type}Size"]();
                         width += type_size.width;
                         height = Math.max(type_size.height, height);
                     }
                     if (this.options.north && this.options.north.isVisible()) {
-                        type_size = this.options.north[type + 'Size']();
+                        type_size = this.options.north["${type}Size"]();
                         width = Math.max(type_size.width, width);
                         height += type_size.height + this.options.vgap;
                     }
                     if (this.options.south && this.options.south.isVisible()) {
-                        type_size = this.options.south[type + 'Size']();
+                        type_size = this.options.south["${type}Size"]();
                         width = Math.max(type_size.width, width);
                         height += type_size.height + this.options.vgap;
                     }
@@ -596,7 +609,7 @@ System.register("layout/Flow", ["layout/Bounds", "layout/Size", "layout/Point"],
                     var insets = container.insets();
                     for (; i < this.options.items.length; i += 1) {
                         if (this.options.items[i].isVisible()) {
-                            typeSize = this.options.items[i][type + 'Size']();
+                            typeSize = this.options.items[i]["${type}Size"]();
                             height = Math.max(height, typeSize.height);
                             width += typeSize.width;
                         }
@@ -615,7 +628,7 @@ System.register("layout/Flow", ["layout/Bounds", "layout/Size", "layout/Point"],
 System.register("layout/Grid", ["components/AbstractContainer", "layout/Bounds", "layout/Size", "core/Log"], function (exports_13, context_13) {
     "use strict";
     var __moduleName = context_13 && context_13.id;
-    var AbstractContainer_2, Bounds_4, Size_4, Log_1, Fill, GridOptopns, Grid;
+    var AbstractContainer_2, Bounds_4, Size_4, Log_1, Fill, GridOptions, Grid;
     return {
         setters: [
             function (AbstractContainer_2_1) {
@@ -637,12 +650,12 @@ System.register("layout/Grid", ["components/AbstractContainer", "layout/Bounds",
                 Fill[Fill["horizontal"] = 1] = "horizontal";
             })(Fill || (Fill = {}));
             exports_13("Fill", Fill);
-            GridOptopns = (function () {
-                function GridOptopns() {
+            GridOptions = (function () {
+                function GridOptions() {
                 }
-                return GridOptopns;
+                return GridOptions;
             }());
-            exports_13("GridOptopns", GridOptopns);
+            exports_13("GridOptions", GridOptions);
             Grid = (function () {
                 function Grid(_a) {
                     var items = _a.items, columns = _a.columns, _b = _a.rows, rows = _b === void 0 ? 0 : _b, _c = _a.fillVertical, fillVertical = _c === void 0 ? Fill.vertical : _c, _d = _a.hgap, hgap = _d === void 0 ? 5 : _d, _e = _a.vgap, vgap = _e === void 0 ? 5 : _e;
@@ -715,7 +728,7 @@ System.register("layout/Grid", ["components/AbstractContainer", "layout/Bounds",
                     var type_size;
                     var i = 0;
                     for (; i < this.options.items.length; i += 1) {
-                        type_size = this.options.items[i][type + 'Size']();
+                        type_size = this.options.items[i]["${type}Size"]();
                         width = Math.max(width, type_size.width);
                         height = Math.max(height, type_size.height);
                     }
@@ -850,7 +863,7 @@ System.register("layout/FlexGrid", ["layout/Grid", "components/AbstractContainer
                     for (i = 0; i < this.options.items.length; i += 1) {
                         r = Math.floor(i / this.options.columns);
                         c = i % this.options.columns;
-                        type_size = this.options.items[i][type + 'Size']();
+                        type_size = this.options.items[i]["${type}Size"]();
                         if (w[c] < type_size.width) {
                             w[c] = type_size.width;
                         }
@@ -924,14 +937,17 @@ System.register("layout/Layout", ["layout/Border", "layout/Flow", "layout/Grid",
         }
     };
 });
-System.register("components/Checkbox", ["components/AbstractContainer", "layout/Size", "layout/Insets", "core/Canvas", "core/Log"], function (exports_16, context_16) {
+System.register("components/Checkbox", ["components/AbstractContainer", "components/AbstractComponent", "layout/Size", "layout/Insets", "core/Canvas", "core/Log"], function (exports_16, context_16) {
     "use strict";
     var __moduleName = context_16 && context_16.id;
-    var AbstractContainer_4, Size_6, Insets_2, Canvas_3, Log_3, Checkbox;
+    var AbstractContainer_4, AbstractComponent_2, Size_6, Insets_2, Canvas_3, Log_3, Checkbox;
     return {
         setters: [
             function (AbstractContainer_4_1) {
                 AbstractContainer_4 = AbstractContainer_4_1;
+            },
+            function (AbstractComponent_2_1) {
+                AbstractComponent_2 = AbstractComponent_2_1;
             },
             function (Size_6_1) {
                 Size_6 = Size_6_1;
@@ -1031,6 +1047,15 @@ System.register("components/Checkbox", ["components/AbstractContainer", "layout/
                 __metadata("design:paramtypes", []),
                 __metadata("design:returntype", void 0)
             ], Checkbox.prototype, "doLayout", null);
+            Checkbox = __decorate([
+                Log_3.AttachLogger(),
+                AbstractComponent_2.RegisterElement({
+                    selector: 'Checkbox',
+                    style: "\n\t\tCheckbox {\n\n\t\t}\n\t",
+                    template: "\n\t\t<Flow oriental=\"horizontal\" class=\"CheckboxContainer\">\n\t\t\t<Rect class=\"CheckboxRect\" /><Label class=\"CheckboxLabel\" text=\"check me up\">\n\t\t</Flow>\n\t"
+                }),
+                __metadata("design:paramtypes", [])
+            ], Checkbox);
             exports_16("Checkbox", Checkbox);
         }
     };

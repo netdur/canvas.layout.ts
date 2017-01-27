@@ -10,7 +10,7 @@ export enum Fill {
 	horizontal
 }
 
-export class GridOptopns {
+export class GridOptions {
 	items: Array<AbstractContainer>
 	columns?: number
 	rows?: number
@@ -22,7 +22,7 @@ export class GridOptopns {
 //@AttachLogger()
 export class Grid implements AbstractLayout {
 
-	options: GridOptopns
+	options: GridOptions
 
 	constructor({
 		items,
@@ -122,7 +122,7 @@ export class Grid implements AbstractLayout {
 		let i: number = 0;
 
 		for (; i < this.options.items.length; i += 1) {
-			type_size = this.options.items[i][type + 'Size']();
+			type_size = this.options.items[i]["${type}Size"]();
 			width = Math.max(width, type_size.width);
 			height = Math.max(height, type_size.height);
 		}

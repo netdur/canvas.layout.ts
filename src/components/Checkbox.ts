@@ -1,15 +1,24 @@
 import { AbstractContainer } from "./AbstractContainer";
+import { RegisterElement } from "./AbstractComponent";
 import { Size } from "../layout/Size";
 import { Insets } from "../layout/Insets";
 import { Canvas } from "../core/Canvas";
 import { AttachLogger, Log } from "../core/Log";
 
-/*
+@AttachLogger()
 @RegisterElement({
-	type: "Checkbox"
+	selector: 'Checkbox',
+	style: `
+		Checkbox {
+
+		}
+	`,
+	template: `
+		<Flow oriental="horizontal" class="CheckboxContainer">
+			<Rect class="CheckboxRect" /><Label class="CheckboxLabel" text="check me up">
+		</Flow>
+	`
 })
-*/
-// @AttachLogger()
 export class Checkbox extends AbstractContainer {
 
 	@Log()

@@ -29,3 +29,17 @@ export abstract class AbstractComponent {
 	// Called when the element is adopted into a new canvas
 	abstract adoptedCallback(oldCanvas: Canvas, newCanvas: Canvas): void;
 }
+
+export function RegisterElement({
+	selector = "AbstractComponent",
+	style = "",
+	template = ""
+} : {
+	selector: string,
+	style?: string,
+	template?: string
+}) {
+	return (target: any) => {
+
+	}
+}

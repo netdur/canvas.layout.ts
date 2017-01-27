@@ -1,4 +1,4 @@
-System.register(["./AbstractContainer", "../layout/Size", "../layout/Insets", "../core/Canvas", "../core/Log"], function (exports_1, context_1) {
+System.register(["./AbstractContainer", "./AbstractComponent", "../layout/Size", "../layout/Insets", "../core/Canvas", "../core/Log"], function (exports_1, context_1) {
     "use strict";
     var __extends = (this && this.__extends) || function (d, b) {
         for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -15,11 +15,14 @@ System.register(["./AbstractContainer", "../layout/Size", "../layout/Insets", ".
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var AbstractContainer_1, Size_1, Insets_1, Canvas_1, Log_1, Checkbox;
+    var AbstractContainer_1, AbstractComponent_1, Size_1, Insets_1, Canvas_1, Log_1, Checkbox;
     return {
         setters: [
             function (AbstractContainer_1_1) {
                 AbstractContainer_1 = AbstractContainer_1_1;
+            },
+            function (AbstractComponent_1_1) {
+                AbstractComponent_1 = AbstractComponent_1_1;
             },
             function (Size_1_1) {
                 Size_1 = Size_1_1;
@@ -119,6 +122,15 @@ System.register(["./AbstractContainer", "../layout/Size", "../layout/Insets", ".
                 __metadata("design:paramtypes", []),
                 __metadata("design:returntype", void 0)
             ], Checkbox.prototype, "doLayout", null);
+            Checkbox = __decorate([
+                Log_1.AttachLogger(),
+                AbstractComponent_1.RegisterElement({
+                    selector: 'Checkbox',
+                    style: "\n\t\tCheckbox {\n\n\t\t}\n\t",
+                    template: "\n\t\t<Flow oriental=\"horizontal\" class=\"CheckboxContainer\">\n\t\t\t<Rect class=\"CheckboxRect\" /><Label class=\"CheckboxLabel\" text=\"check me up\">\n\t\t</Flow>\n\t"
+                }),
+                __metadata("design:paramtypes", [])
+            ], Checkbox);
             exports_1("Checkbox", Checkbox);
         }
     };

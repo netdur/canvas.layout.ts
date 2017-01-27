@@ -10,7 +10,7 @@ System.register(["../components/AbstractContainer", "./Bounds", "./Size", "../co
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var __moduleName = context_1 && context_1.id;
-    var AbstractContainer_1, Bounds_1, Size_1, Log_1, Fill, GridOptopns, Grid;
+    var AbstractContainer_1, Bounds_1, Size_1, Log_1, Fill, GridOptions, Grid;
     return {
         setters: [
             function (AbstractContainer_1_1) {
@@ -32,12 +32,12 @@ System.register(["../components/AbstractContainer", "./Bounds", "./Size", "../co
                 Fill[Fill["horizontal"] = 1] = "horizontal";
             })(Fill || (Fill = {}));
             exports_1("Fill", Fill);
-            GridOptopns = (function () {
-                function GridOptopns() {
+            GridOptions = (function () {
+                function GridOptions() {
                 }
-                return GridOptopns;
+                return GridOptions;
             }());
-            exports_1("GridOptopns", GridOptopns);
+            exports_1("GridOptions", GridOptions);
             Grid = (function () {
                 function Grid(_a) {
                     var items = _a.items, columns = _a.columns, _b = _a.rows, rows = _b === void 0 ? 0 : _b, _c = _a.fillVertical, fillVertical = _c === void 0 ? Fill.vertical : _c, _d = _a.hgap, hgap = _d === void 0 ? 5 : _d, _e = _a.vgap, vgap = _e === void 0 ? 5 : _e;
@@ -110,7 +110,7 @@ System.register(["../components/AbstractContainer", "./Bounds", "./Size", "../co
                     var type_size;
                     var i = 0;
                     for (; i < this.options.items.length; i += 1) {
-                        type_size = this.options.items[i][type + 'Size']();
+                        type_size = this.options.items[i]["${type}Size"]();
                         width = Math.max(width, type_size.width);
                         height = Math.max(height, type_size.height);
                     }

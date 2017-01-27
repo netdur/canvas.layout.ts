@@ -4,10 +4,20 @@ export class PointOptions {
 }
 
 export class Point {
+
 	y: number
 	x: number
-	constructor(options?: PointOptions) {
-		this.x = options.x;
-		this.y = options.y;
+
+	constructor({
+		y = 0,
+		x = 0
+	} : {
+		y: number,
+		x: number
+	}) {
+
+		this.x = x;
+		this.y = y;
+
 	}
 }
