@@ -21,12 +21,14 @@ export class Canvas {
 		id = "",
 		canvas,
 		width = 600,
-		height = 400
+		height = 400,
+		comment = "[no comment]"
 	} : {
 		id?: string,
 		canvas?: (string | HTMLCanvasElement),
 		width?: number,
-		height?: number
+		height?: number,
+		comment?: string
 	}) {
 
 		/* create element element */
@@ -39,6 +41,9 @@ export class Canvas {
 			document.body.appendChild(this.element);
 
 			// just for demo
+			let span = document.createElement("span");
+			span.textContent = comment;
+			document.body.appendChild(span);
 			let hr = document.createElement("hr");
 			document.body.appendChild(hr);
 		}

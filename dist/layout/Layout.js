@@ -1,7 +1,7 @@
-System.register(["./Border", "./Flow", "./Grid", "./FlexGrid"], function (exports_1, context_1) {
+System.register(["./Border", "./Flow", "./Grid", "./FlexGrid", "./Absolute"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var Border_1, Flow_1, Grid_1, FlexGrid_1, Layout;
+    var Border_1, Flow_1, Grid_1, FlexGrid_1, Absolute_1, Layout;
     return {
         setters: [
             function (Border_1_1) {
@@ -15,6 +15,9 @@ System.register(["./Border", "./Flow", "./Grid", "./FlexGrid"], function (export
             },
             function (FlexGrid_1_1) {
                 FlexGrid_1 = FlexGrid_1_1;
+            },
+            function (Absolute_1_1) {
+                Absolute_1 = Absolute_1_1;
             }
         ],
         execute: function () {
@@ -31,6 +34,7 @@ System.register(["./Border", "./Flow", "./Grid", "./FlexGrid"], function (export
             Layout.Flow = Flow_1.Flow;
             Layout.Grid = Grid_1.Grid;
             Layout.FlexGrid = FlexGrid_1.FlexGrid;
+            Layout.Absolute = Absolute_1.Absolute;
             exports_1("Layout", Layout);
         }
     };

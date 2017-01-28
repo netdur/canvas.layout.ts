@@ -14,7 +14,7 @@ System.register(["../components/Rect", "../layout/Bounds"], function (exports_1,
         execute: function () {
             Canvas = (function () {
                 function Canvas(_a) {
-                    var _b = _a.id, id = _b === void 0 ? "" : _b, canvas = _a.canvas, _c = _a.width, width = _c === void 0 ? 600 : _c, _d = _a.height, height = _d === void 0 ? 400 : _d;
+                    var _b = _a.id, id = _b === void 0 ? "" : _b, canvas = _a.canvas, _c = _a.width, width = _c === void 0 ? 600 : _c, _d = _a.height, height = _d === void 0 ? 400 : _d, _e = _a.comment, comment = _e === void 0 ? "[no comment]" : _e;
                     if (canvas instanceof HTMLCanvasElement) {
                         this.element = canvas;
                     }
@@ -24,6 +24,9 @@ System.register(["../components/Rect", "../layout/Bounds"], function (exports_1,
                     else {
                         this.element = document.createElement("canvas");
                         document.body.appendChild(this.element);
+                        var span = document.createElement("span");
+                        span.textContent = comment;
+                        document.body.appendChild(span);
                         var hr = document.createElement("hr");
                         document.body.appendChild(hr);
                     }
@@ -38,8 +41,11 @@ System.register(["../components/Rect", "../layout/Bounds"], function (exports_1,
                         width: width,
                         height: height
                     }));
-                    this.root.doLayout();
+                    this.render();
                 }
+                Canvas.prototype.render = function () {
+                    this.root.doLayout();
+                };
                 return Canvas;
             }());
             Canvas.debug = true;

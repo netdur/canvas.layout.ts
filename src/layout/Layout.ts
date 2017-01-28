@@ -3,6 +3,8 @@ import { Flow } from "./Flow";
 import { Grid } from "./Grid";
 import { FlexGrid } from "./FlexGrid";
 
+import { Absolute } from "./Absolute";
+
 export class Layout {
 	static readonly VERTICAL: String = "vertical";
 	static readonly HORIZONTAL: String = "horizontal";
@@ -13,4 +15,5 @@ export class Layout {
 	static readonly Flow = Flow
 	static readonly Grid = Grid
 	static readonly FlexGrid = FlexGrid
+	static readonly Absolute = Absolute
 }
