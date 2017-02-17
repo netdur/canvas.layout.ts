@@ -208,4 +208,4 @@ You can also lay out components vertically, by just changing the `rows` paramete
 
 ## License
 
-Released under a non-commercial BSD license
+GPL v2
